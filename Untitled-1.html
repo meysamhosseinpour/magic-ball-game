@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>ask yur question ?</div>
+    <input type="text" class="form-control" placeholder="question" />
+    <button class="v=btn btn-success">ask</button>
+    <div class="message" class="alert alert-info"></div>
+    <script>
+      const answerArray = [
+        "It will work",
+        "Maybe maybe not",
+        "Probably Not",
+        "I Dont Now",
+      ];
+      const message = document.querySelector(".message");
+      const question = document.querySelector("input");
+      const button = document.querySelector("button");
+      button.addEventListener("click", function () {
+        let res = Math.floor(Math.random() * answerArray.length);
+        message.innerText = question.value + " " + answerArray[res];
+        question.value = "";
+      });
+    </script>
+  </body>
+</html>
